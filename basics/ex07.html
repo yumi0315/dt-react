@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>컴포넌트에 값 전달하기(props이용하기)</title>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      // 함수형 컴퍼넌트 정의
+      function Greeting(props) {
+        return <h1 className="greeting">{props.sayWhat}</h1>;
+      }
+
+      // React createElement로 값 전달
+      // const root = ReactDOM.createRoot(Greeting.{sayWhat: "Good"});
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+
+      // JSX로 값 전달
+      root.render(<Greeting sayWhat="Good Morning!" />);
+    </script>
+  </body>
+</html>
